@@ -1,1 +1,1 @@
-# Placeholder website for racheljohnson.net
+# Website for racheljohnson.net
