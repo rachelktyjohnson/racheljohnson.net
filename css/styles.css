@@ -28,11 +28,6 @@ h2 span, span span {
   font-weight: 100;
 }
 
-span {
-  font-weight: 100;
-  display: none;
-}
-
 p {
   font-size: 1rem;
 }
@@ -78,17 +73,6 @@ body main .content .facet .facet-header {
   display: flex;
   cursor: pointer;
 }
-body main .content .facet .current {
-  overflow: hidden;
-  white-space: nowrap;
-  animation: reveal 1s steps(100, end);
-  opacity: 0.4;
-  transition: opacity 0.2s;
-  margin-top: 7px;
-}
-body main .content .facet .current:hover {
-  opacity: 1;
-}
 
 footer {
   margin-top: auto;
@@ -120,30 +104,35 @@ footer .socials a:hover {
   opacity: 1;
 }
 
-.show {
-  overflow: hidden;
-  padding-right: 2px;
-  border-right: 2px solid green;
-  white-space: nowrap;
-  animation: typing 1s steps(100, end), blink-caret 0.75s step-end infinite;
+.facet-header h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes reveal {
-  from {
-    height: 0;
-  }
-  to {
-    height: 100%;
-  }
+.facet-header:hover span.decorator {
+  width: 100%;
+  animation: blink-caret 0.75s infinite;
 }
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+
+span.decorator {
+  font-weight: 100;
+  overflow: hidden;
+  padding-right: 2px;
+  border-right: 2px solid transparent;
+  white-space: nowrap;
+  width: 0;
+  transition: width 0.6s;
 }
+
+#educator:after {
+  content: "E";
+}
+
+.facet-header:hover #educator:after {
+  content: "";
+}
+
 @keyframes blink-caret {
   from, to {
     border-color: transparent;
