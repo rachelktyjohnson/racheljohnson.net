@@ -152,9 +152,8 @@ span.decorator{
 }
 .facet-header.facet-open #educator:after,
 .facet-header:hover #educator:after{
-  content:"";
+  content: "";
 }
-
 
 @keyframes blink-caret {
   from, to { border-color: transparent }
