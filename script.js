@@ -21,8 +21,6 @@
 //         // e.target.closest('.facet-header').lastElementChild.style.display = "block";
 //         e.target.closest('.facet-header').lastElementChild.classList.add("show")
 //     }
-
-})
 //
 // document.querySelector(".content").addEventListener('mouseout',(e)=>{
 //     if(e.target.closest('.facet-header')){
@@ -42,3 +40,16 @@
 //         e.target.parentNode.parentNode.lastElementChild.style.display="block";
 //     }
 // })
+
+document.querySelector(".content").addEventListener('click',(e)=> {
+    if (e.target.closest('.facet-header')) {
+        if( e.target.closest('.facet-header').classList.contains("facet-open")){
+            e.target.closest('.facet-header').classList.remove("facet-open")
+            e.target.closest('.facet-header').nextElementSibling.classList.remove("body-open")
+        } else {
+            e.target.closest('.facet-header').classList.add("facet-open")
+            e.target.closest('.facet-header').nextElementSibling.classList.add("body-open")
+        }
+
+    }
+})

@@ -104,15 +104,31 @@ footer .socials a:hover {
   opacity: 1;
 }
 
+.facet-header,
 .facet-header h2 {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.facet-header.facet-open span.decorator,
 .facet-header:hover span.decorator {
-  width: 100%;
+  max-width: 100%;
   animation: blink-caret 0.75s infinite;
+}
+
+.facet-body.body-open {
+  height: 100%;
+  max-height: 500px;
+}
+
+.facet-body {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s, max-height 0.5s;
+  width: 80%;
+  max-width: 700px;
+  max-height: 0;
 }
 
 span.decorator {
@@ -121,14 +137,15 @@ span.decorator {
   padding-right: 2px;
   border-right: 2px solid transparent;
   white-space: nowrap;
-  width: 0;
-  transition: width 0.6s;
+  max-width: 0;
+  transition: width 0.6s, max-width 0.6s;
 }
 
 #educator:after {
   content: "E";
 }
 
+.facet-header.facet-open #educator:after,
 .facet-header:hover #educator:after {
   content: "";
 }
