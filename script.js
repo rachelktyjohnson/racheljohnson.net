@@ -2,12 +2,11 @@ document.querySelectorAll('.facet-header span').forEach((element)=>{
     element.style.display="none";
 })
 
-document.querySelector("#educator").innerText = "educate";
+document.querySelectorAll('.current').forEach((element)=>{
+    element.style.display="none";
+})
 
-let design_open
-let develop_open
-let learn_open
-let educate_open
+document.querySelector("#educator").innerText = "educate";
 
 document.querySelector(".content").addEventListener('mouseover',(e)=>{
     if (e.target.id){
@@ -24,5 +23,14 @@ document.querySelector(".content").addEventListener('mouseout',(e)=>{
         if (e.target.id==="educator"){
             e.target.innerText = "educate"
         }
+    }
+})
+
+document.querySelector(".content").addEventListener('click',(e)=>{
+    if (e.target.id){
+        document.querySelectorAll('.current').forEach((el)=>{
+            el.style.display="none";
+        })
+        e.target.parentNode.parentNode.lastElementChild.style.display="block";
     }
 })

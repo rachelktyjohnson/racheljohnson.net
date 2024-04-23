@@ -61,15 +61,31 @@ body main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  line-height: 2;
 }
 body main .content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+body main .content .facet {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px 0;
+}
 body main .content .facet .facet-header {
   display: flex;
+}
+body main .content .facet .current {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: reveal 1s steps(100, end);
+  opacity: 0.4;
+  transition: opacity 0.2s;
+  margin-top: 7px;
+}
+body main .content .facet .current:hover {
+  opacity: 1;
 }
 body main h2 {
   cursor: pointer;
@@ -106,13 +122,21 @@ footer .socials a:hover {
 }
 
 .decorator {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  overflow: hidden;
   padding-right: 2px;
-  border-right: 2px solid green; /* The typewriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
+  border-right: 2px solid green;
+  white-space: nowrap;
   animation: typing 1s steps(100, end), blink-caret 0.75s step-end infinite;
 }
 
+@keyframes reveal {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
 @keyframes typing {
   from {
     width: 0;
