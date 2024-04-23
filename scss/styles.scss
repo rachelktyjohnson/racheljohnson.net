@@ -38,7 +38,16 @@ h2, span{
 p {
   font-size: 1rem;
 }
-
+.screen{
+  background: rgba(255,255,255,0.95);
+  min-width:100vw;
+  min-height:100vh;
+  position:fixed;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
 body {
   display: flex;
   flex-direction:column;
@@ -47,6 +56,14 @@ body {
   min-height: 100vh;
   background-image: url("../img/background.png");
   text-align:center;
+
+  &.body-designer{
+    background-image: url("../img/bg-design.jpg");
+  }
+
+  &.body-developer{
+    background-image:url("../img/background.png");
+  }
 
   header {
     margin-bottom:auto;
