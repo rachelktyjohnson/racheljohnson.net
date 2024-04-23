@@ -1,51 +1,131 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
 
+@mixin tablet() {
+  @media(min-width: 800px) {
+    @content
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
   font-family: 'Roboto Mono', monospace;
 }
 
+a {
+  color: #076640;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height:1;
+  text-transform: uppercase;
+  span{
+    font-weight:300;
+  }
+}
+h2, span{
+  font-size:2rem;
+  text-transform: uppercase;
+  font-weight:400;
+  span{
+    font-weight:100;
+  }
+}
+
+span{
+  font-weight:100;
+}
+
+p {
+  font-size: 1rem;
+}
+
 body {
   display: flex;
+  flex-direction:column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background-image: url("../img/background.png");
+  text-align:center;
 
-  .container {
+  header {
+    margin-bottom:auto;
+    margin-top:25px;
+    @include tablet{
+      margin-top:0;
+      position: absolute;
+      top: 25px;
+      left: 25px;
+    }
+  }
+
+  main {
     display: flex;
     flex-direction: column;
     align-items: center;
     line-height: 2;
-
-    img {
-      width: 200px;
-    }
-
-    a {
-      color: #076640;
-      font-weight: 600;
-    }
-
-    h1 {
-      font-size: 4rem;
-      line-height:1;
-      margin-top:30px;
-      span{
-        font-weight:300;
+    .content{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      .facet{
+        .facet-header{
+          display:flex;
+        }
       }
     }
     h2{
-      text-transform: uppercase;
-      font-weight:300;
-      span{
-        font-weight:100;
-      }
-    }
-
-    p {
-      font-size: 1rem;
+      cursor: pointer;
     }
   }
+}
+
+footer {
+  margin-top:auto;
+  margin-bottom:10px;
+  @include tablet{
+    margin-bottom:0;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+  .socials {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    grid-gap:5px;
+    a {
+      text-decoration: none;
+      opacity: 0.5;
+      transition: 0.2s opacity;
+      svg {
+        height: 45px;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.decorator{
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  padding-right:2px;
+  border-right: 2px solid green; /* The typewriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  animation: typing 1s steps(100, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: green; }
 }
