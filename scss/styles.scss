@@ -36,6 +36,7 @@ h2, span{
 
 span{
   font-weight:100;
+  display:none;
 }
 
 p {
@@ -77,6 +78,7 @@ body {
         margin:20px 0;
         .facet-header{
           display:flex;
+          cursor: pointer;
         }
         .current{
           overflow: hidden;
@@ -90,9 +92,6 @@ body {
           }
         }
       }
-    }
-    h2{
-      cursor: pointer;
     }
   }
 }
@@ -126,14 +125,13 @@ footer {
   }
 }
 
-.decorator{
+.show{
   overflow: hidden;
   padding-right:2px;
   border-right: 2px solid green;
   white-space: nowrap;
   animation: typing 1s steps(100, end), blink-caret .75s step-end infinite;
 }
-
 
 @keyframes reveal {
   from {height: 0}
@@ -144,6 +142,7 @@ footer {
   from { width: 0 }
   to { width: 100% }
 }
+
 
 @keyframes blink-caret {
   from, to { border-color: transparent }

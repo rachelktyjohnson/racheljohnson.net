@@ -30,6 +30,7 @@ h2 span, span span {
 
 span {
   font-weight: 100;
+  display: none;
 }
 
 p {
@@ -75,6 +76,7 @@ body main .content .facet {
 }
 body main .content .facet .facet-header {
   display: flex;
+  cursor: pointer;
 }
 body main .content .facet .current {
   overflow: hidden;
@@ -86,9 +88,6 @@ body main .content .facet .current {
 }
 body main .content .facet .current:hover {
   opacity: 1;
-}
-body main h2 {
-  cursor: pointer;
 }
 
 footer {
@@ -121,7 +120,7 @@ footer .socials a:hover {
   opacity: 1;
 }
 
-.decorator {
+.show {
   overflow: hidden;
   padding-right: 2px;
   border-right: 2px solid green;
