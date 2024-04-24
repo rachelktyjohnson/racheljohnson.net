@@ -167,9 +167,22 @@ span.decorator.decorated {
   transition: max-width 0.4s;
 }
 
+#designer:after {
+  color: #7ac943;
+}
+
+#developer:after {
+  color: #3fa9f5;
+}
+
+#learner:after {
+  color: #ff7bac;
+}
+
 #educator:after {
   content: "or";
   transition-delay: 0.4s;
+  color: #ff931e;
 }
 
 #educator:hover span {
@@ -182,16 +195,55 @@ span.decorator.decorated {
 #learner:hover:after,
 #educator:hover:after {
   max-width: 100%;
-  animation: blink-caret 0.75s infinite;
-  border-right: 1px black solid;
+  border-right: 2px black solid;
 }
 
-@keyframes blink-caret {
+#designer:hover:after {
+  animation: blink-caret-designer 0.75s infinite;
+}
+
+#developer:hover:after {
+  animation: blink-caret-developer 0.75s infinite;
+}
+
+#learner:hover:after {
+  animation: blink-caret-learner 0.75s infinite;
+}
+
+#educator:hover:after {
+  animation: blink-caret-educator 0.75s infinite;
+}
+
+@keyframes blink-caret-designer {
   from, to {
     border-color: transparent;
   }
   50% {
-    border-color: black;
+    border-color: #7ac943;
+  }
+}
+@keyframes blink-caret-developer {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #3fa9f5;
+  }
+}
+@keyframes blink-caret-learner {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #ff7bac;
+  }
+}
+@keyframes blink-caret-educator {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #ff931e;
   }
 }
 

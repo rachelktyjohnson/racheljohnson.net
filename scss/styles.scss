@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
 
+
+
+$color-designer: #7ac943;
+$color-developer: #3fa9f5;
+$color-learner: #ff7bac;
+$color-educator: #ff931e;
+
+
 @mixin tablet() {
   @media(min-width: 800px) {
     @content
@@ -186,9 +194,20 @@ span.decorator{
   transition: max-width 0.4s;
 }
 
+#designer:after{
+  color:$color-designer;
+}
+#developer:after{
+  color:$color-developer;
+}
+#learner:after{
+  color:$color-learner;
+}
+
 #educator:after{
   content: "or";
   transition-delay:0.4s;
+  color: $color-educator;
 }
 
 
@@ -203,17 +222,37 @@ span.decorator{
 #learner:hover:after,
 #educator:hover:after{
   max-width:100%;
-  animation: blink-caret .75s infinite;
-  border-right: 1px black solid;
+  border-right: 2px black solid;
+}
+
+#designer:hover:after{
+  animation: blink-caret-designer .75s infinite;
+}
+#developer:hover:after{
+  animation: blink-caret-developer .75s infinite;
+}
+#learner:hover:after{
+  animation: blink-caret-learner .75s infinite;
+}
+#educator:hover:after{
+  animation: blink-caret-educator .75s infinite;
 }
 
 
-//.facet-header.facet-open #educator:after,
-//.facet-header:hover #educator:after{
-//  content: "";
-//}
 
-@keyframes blink-caret {
+@keyframes blink-caret-designer {
   from, to { border-color: transparent }
-  50% { border-color: black; }
+  50% { border-color: $color-designer; }
+}
+@keyframes blink-caret-developer {
+  from, to { border-color: transparent }
+  50% { border-color: $color-developer; }
+}
+@keyframes blink-caret-learner {
+  from, to { border-color: transparent }
+  50% { border-color: $color-learner; }
+}
+@keyframes blink-caret-educator {
+  from, to { border-color: transparent }
+  50% { border-color: $color-educator; }
 }
