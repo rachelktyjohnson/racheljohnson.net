@@ -126,6 +126,21 @@ footer {
   max-height:0;
 }
 
+.flair{
+  width:100%;
+  height:600px;
+  position:absolute;
+  bottom:0;
+  background-image: url('../img/des.png');
+  background-size:cover;
+  z-index:-1;
+  transform: translateY(600px);
+  &.showing{
+    transform: translateY(0);
+  }
+}
+
+
 
 //.facet-header.facet-open span.decorator,
 //.facet-header:hover span.decorator{
@@ -150,16 +165,55 @@ span.decorator{
     max-width:100%;
   }
 }
-//
-#educator:after{
-  content: "";
+
+#educator span{
+  font-weight:400;
+  max-width:100%;
+  overflow:hidden;
+  transition: max-width 0.3s;
+  transition-delay:1s;
 }
+
+#designer:after,
+#developer:after,
+#learner:after,
+#educator:after{
+  content:"er";
+  font-weight:100;
+  max-width:0;
+  overflow:hidden;
+  transition: max-width 0.4s;
+}
+
+#educator:after{
+  content: "or";
+  transition-delay:0.4s;
+}
+
+
+#educator:hover span{
+  max-width:0;
+  transition: max-width 0.3s;
+}
+
+
+#designer:hover:after,
+#developer:hover:after,
+#learner:hover:after,
+#educator:hover:after{
+  max-width:100%;
+  animation: blink-caret .75s infinite;
+  border-right: 1px green solid;
+}
+
+
+
 //.facet-header.facet-open #educator:after,
 //.facet-header:hover #educator:after{
 //  content: "";
 //}
-//
-//@keyframes blink-caret {
-//  from, to { border-color: transparent }
-//  50% { border-color: green; }
-//}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: green; }
+}
