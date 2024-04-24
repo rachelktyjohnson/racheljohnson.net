@@ -127,6 +127,7 @@ footer .socials a:hover {
   bottom: 0;
   background-image: url("../img/des.png");
   background-size: cover;
+  background-position: center center;
   z-index: -1;
   transform: translateY(600px);
 }
@@ -182,7 +183,7 @@ span.decorator.decorated {
 #educator:hover:after {
   max-width: 100%;
   animation: blink-caret 0.75s infinite;
-  border-right: 1px green solid;
+  border-right: 1px black solid;
 }
 
 @keyframes blink-caret {
@@ -190,7 +191,7 @@ span.decorator.decorated {
     border-color: transparent;
   }
   50% {
-    border-color: green;
+    border-color: black;
   }
 }
 

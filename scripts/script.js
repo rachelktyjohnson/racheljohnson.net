@@ -1,3 +1,35 @@
+function triggerFlair(triggerBool){
+    if (triggerBool){
+        anime({
+            targets: '.flair',
+            translateY: [600, 0],
+            duration: 1000,
+        })
+    } else {
+        anime({
+            targets: '.flair',
+            translateY: [0, 600],
+            duration: 1000,
+        })
+    }
+}
+
+document.querySelector("#designer").addEventListener('mouseover',(element)=>{
+    document.querySelector('.flair').style.backgroundImage = "url('../img/des.png')";
+    triggerFlair(true)
+})
+document.querySelector("#designer").addEventListener('mouseout',(element)=>{
+    triggerFlair(false)
+})
+
+document.querySelector("#developer").addEventListener('mouseover',(element)=>{
+    document.querySelector('.flair').style.backgroundImage = "url('../img/dev.png')";
+    triggerFlair(true)
+})
+document.querySelector("#developer").addEventListener('mouseout',(element)=>{
+    triggerFlair(false)
+})
+
 let timeline = anime.timeline({
     easing: 'easeOutExpo',
     duration: 500
