@@ -2,13 +2,13 @@ function triggerFlair(triggerBool){
     if (triggerBool){
         anime({
             targets: '.flair',
-            translateY: [600, 0],
+            translateY: [500, 0],
             duration: 1000,
         })
     } else {
         anime({
             targets: '.flair',
-            translateY: [0, 600],
+            translateY: [0, 500],
             duration: 1000,
         })
     }
