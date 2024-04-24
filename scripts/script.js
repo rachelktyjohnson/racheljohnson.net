@@ -30,6 +30,21 @@ document.querySelector("#developer").addEventListener('mouseout',(element)=>{
     triggerFlair(false)
 })
 
+document.querySelector("#learner").addEventListener('mouseover',(element)=>{
+    document.querySelector('.flair').style.backgroundImage = "url('../img/learn.png')";
+    triggerFlair(true)
+})
+document.querySelector("#learner").addEventListener('mouseout',(element)=>{
+    triggerFlair(false)
+})
+document.querySelector("#educator").addEventListener('mouseover',(element)=>{
+    document.querySelector('.flair').style.backgroundImage = "url('../img/ed.png')";
+    triggerFlair(true)
+})
+document.querySelector("#educator").addEventListener('mouseout',(element)=>{
+    triggerFlair(false)
+})
+
 let timeline = anime.timeline({
     easing: 'easeOutExpo',
     duration: 500

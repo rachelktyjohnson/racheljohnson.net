@@ -133,7 +133,7 @@ footer {
   bottom:0;
   background-image: url('../img/des.png');
   background-size:cover;
-  background-position: center center;
+  background-position: top center;
   z-index:-1;
   transform: translateY(600px);
   &.showing{
@@ -172,7 +172,7 @@ span.decorator{
   max-width:100%;
   overflow:hidden;
   transition: max-width 0.3s;
-  transition-delay:1s;
+  transition-delay:0.9s;
 }
 
 #designer:after,
@@ -206,7 +206,6 @@ span.decorator{
   animation: blink-caret .75s infinite;
   border-right: 1px black solid;
 }
-
 
 
 //.facet-header.facet-open #educator:after,
