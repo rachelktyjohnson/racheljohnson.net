@@ -112,12 +112,21 @@ footer .socials a:hover {
   justify-content: center;
 }
 
+.facet {
+  display: flex;
+  flex-direction: column;
+}
+
 .facet-body {
-  height: 0;
   overflow: hidden;
   width: 80%;
   max-width: 700px;
   max-height: 0;
+  transition: max-height 0.3s;
+}
+.facet-body.body-open {
+  max-height: 500px;
+  transition: max-height 0.5s;
 }
 
 .flair {
@@ -125,27 +134,25 @@ footer .socials a:hover {
   height: 600px;
   position: absolute;
   bottom: -100px;
-  background-image: url("../img/des.png");
   background-size: cover;
   background-position: top center;
   z-index: -1;
   transform: translateY(600px);
 }
+.flair.flair-designer {
+  background-image: url("../img/des.png");
+}
+.flair.flair-developer {
+  background-image: url("../img/dev.png");
+}
+.flair.flair-learner {
+  background-image: url("../img/learn.png");
+}
+.flair.flair-educator {
+  background-image: url("../img/ed.png");
+}
 .flair.showing {
   transform: translateY(0);
-}
-
-span.decorator {
-  font-weight: 100;
-  overflow: hidden;
-  padding-right: 2px;
-  border-right: 2px solid transparent;
-  white-space: nowrap;
-  transform-origin: left;
-}
-span.decorator.decorated {
-  transform: scaleX(1);
-  max-width: 100%;
 }
 
 #educator span {
@@ -198,6 +205,30 @@ span.decorator.decorated {
   border-right: 2px black solid;
 }
 
+.facet-header #designer.facet-open:after {
+  max-width: 100%;
+  border-right: 2px #7ac943 solid;
+  animation: blink-caret-designer 0.75s infinite;
+}
+.facet-header #developer.facet-open:after {
+  max-width: 100%;
+  border-right: 2px #3fa9f5 solid;
+  animation: blink-caret-developer 0.75s infinite;
+}
+.facet-header #learner.facet-open:after {
+  max-width: 100%;
+  border-right: 2px #ff7bac solid;
+  animation: blink-caret-learner 0.75s infinite;
+}
+.facet-header #educator.facet-open:after {
+  max-width: 100%;
+  border-right: 2px #ff931e solid;
+  animation: blink-caret-educator 0.75s infinite;
+}
+.facet-header #educator.facet-open span {
+  max-width: 0;
+}
+
 #designer:hover:after {
   animation: blink-caret-designer 0.75s infinite;
 }
@@ -245,6 +276,21 @@ span.decorator.decorated {
   50% {
     border-color: #ff931e;
   }
+}
+.facet-designer a {
+  color: #7ac943;
+}
+
+.facet-developer a {
+  color: #3fa9f5;
+}
+
+.facet-learner a {
+  color: #ff7bac;
+}
+
+.facet-educator a {
+  color: #ff931e;
 }
 
 /*# sourceMappingURL=styles.css.map */

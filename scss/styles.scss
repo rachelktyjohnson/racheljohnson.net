@@ -124,56 +124,49 @@ footer {
   align-items:center;
   justify-content:center;
 }
-
-
+.facet{
+  display:flex;
+  flex-direction:column;
+}
 .facet-body{
-  height:0;
   overflow: hidden;
   width:80%;
   max-width:700px;
   max-height:0;
+  transition: max-height 0.3s;
+  &.body-open{
+    max-height: 500px;
+    transition: max-height 0.5s;
+  }
 }
+
 
 .flair{
   width:100%;
   height:600px;
   position:absolute;
   bottom:-100px;
-  background-image: url('../img/des.png');
   background-size:cover;
   background-position: top center;
   z-index:-1;
   transform: translateY(600px);
+  &.flair-designer{
+    background-image: url('../img/des.png');
+  }
+  &.flair-developer{
+    background-image: url('../img/dev.png');
+  }
+  &.flair-learner{
+    background-image: url('../img/learn.png');
+  }
+  &.flair-educator{
+    background-image: url('../img/ed.png');
+  }
   &.showing{
     transform: translateY(0);
   }
 }
 
-
-
-//.facet-header.facet-open span.decorator,
-//.facet-header:hover span.decorator{
-//  max-width:100%;
-//  animation: blink-caret .75s infinite;
-//}
-//
-//.facet-body.body-open{
-//  height:100%;
-//  max-height:500px;
-//}
-
-span.decorator{
-  font-weight:100;
-  overflow: hidden;
-  padding-right:2px;
-  border-right: 2px solid transparent;
-  white-space: nowrap;
-  transform-origin: left;
-  &.decorated{
-    transform: scaleX(1);
-    max-width:100%;
-  }
-}
 
 #educator span{
   font-weight:400;
@@ -225,6 +218,33 @@ span.decorator{
   border-right: 2px black solid;
 }
 
+.facet-header{
+  #designer.facet-open:after{
+    max-width:100%;
+    border-right: 2px $color-designer solid;
+    animation: blink-caret-designer .75s infinite;
+  }
+  #developer.facet-open:after{
+    max-width:100%;
+    border-right: 2px $color-developer solid;
+    animation: blink-caret-developer .75s infinite;
+  }
+  #learner.facet-open:after{
+    max-width:100%;
+    border-right: 2px $color-learner solid;
+    animation: blink-caret-learner .75s infinite;
+  }
+  #educator.facet-open:after{
+    max-width:100%;
+    border-right: 2px $color-educator solid;
+    animation: blink-caret-educator .75s infinite;
+  }
+  #educator.facet-open span{
+    max-width:0;
+  }
+}
+
+
 #designer:hover:after{
   animation: blink-caret-designer .75s infinite;
 }
@@ -237,7 +257,6 @@ span.decorator{
 #educator:hover:after{
   animation: blink-caret-educator .75s infinite;
 }
-
 
 
 @keyframes blink-caret-designer {
@@ -255,4 +274,17 @@ span.decorator{
 @keyframes blink-caret-educator {
   from, to { border-color: transparent }
   50% { border-color: $color-educator; }
+}
+
+.facet-designer a{
+  color: $color-designer;
+}
+.facet-developer a{
+  color: $color-developer;
+}
+.facet-learner a{
+  color: $color-learner;
+}
+.facet-educator a{
+  color: $color-educator;
 }
