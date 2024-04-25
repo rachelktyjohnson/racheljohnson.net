@@ -42,7 +42,6 @@ function triggerClickFlair(triggerBool, target) {
 function anyFlairOpen(){
     let flairOpen = false;
     document.querySelectorAll('.flair').forEach((element)=>{
-        console.log(element.classList)
         if (element.classList.contains('showing')){
             flairOpen = true
         }
@@ -105,7 +104,6 @@ function toggleFacet(e) {
 
         //close any other facets
         if(document.querySelector('.facet-open')){
-            console.log("hi");
             closeFacet(document.querySelector('.facet-open'))
         }
 
@@ -121,13 +119,11 @@ function closeFacet(el) {
     flair_showing.classList.remove('showing')
     //trigger thingy
     triggerClickFlair(false, flair_showing)
-    console.log(el.id)
 }
 
 function openFacet(el) {
     el.parentElement.nextElementSibling.classList.add('body-open')
     el.classList.add('facet-open')
-    console.log(el.id)
     const flair_to_open = document.querySelector(`.flair-${el.id}`)
     triggerClickFlair(true, flair_to_open)
     flair_to_open.classList.add('showing');
