@@ -5,6 +5,27 @@ function triggerHoverFlair(triggerBool, target) {
             //but we need to check if someone else is already open
             anime({
                 targets: target,
+                translateY: [600, 200],
+                duration: 1000,
+            })
+        } else {
+            //if we want flair to hide
+            anime({
+                targets: target,
+                translateY: [200, 600],
+                duration: 1000,
+            })
+        }
+    }
+}
+
+function triggerClickFlair(triggerBool, target) {
+    if (!anyFlairOpen()){
+        if (triggerBool) {
+            //if we want it to show
+            //but we need to check if someone else is already open
+            anime({
+                targets: target,
                 translateY: [500, 0],
                 duration: 1000,
             })
@@ -17,9 +38,7 @@ function triggerHoverFlair(triggerBool, target) {
             })
         }
     }
-
 }
-
 function anyFlairOpen(){
     let flairOpen = false;
     document.querySelectorAll('.flair').forEach((element)=>{
@@ -101,7 +120,7 @@ function closeFacet(el) {
     const flair_showing = document.querySelector(".flair.showing");
     flair_showing.classList.remove('showing')
     //trigger thingy
-    triggerHoverFlair(false, flair_showing)
+    triggerClickFlair(false, flair_showing)
     console.log(el.id)
 }
 
@@ -110,7 +129,7 @@ function openFacet(el) {
     el.classList.add('facet-open')
     console.log(el.id)
     const flair_to_open = document.querySelector(`.flair-${el.id}`)
-    triggerHoverFlair(true, flair_to_open)
+    triggerClickFlair(true, flair_to_open)
     flair_to_open.classList.add('showing');
 }
 
