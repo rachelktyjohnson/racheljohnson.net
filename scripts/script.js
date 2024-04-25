@@ -26,14 +26,14 @@ function triggerClickFlair(triggerBool, target) {
             //but we need to check if someone else is already open
             anime({
                 targets: target,
-                translateY: [500, 0],
+                translateY: [200, 0],
                 duration: 1000,
             })
         } else {
             //if we want flair to hide
             anime({
                 targets: target,
-                translateY: [0, 500],
+                translateY: [0, 600],
                 duration: 1000,
             })
         }
