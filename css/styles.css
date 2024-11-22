@@ -167,6 +167,9 @@ noscript {
 .flair.flair-educator {
   background-image: url("../img/ed.png");
 }
+.flair.flair-researcher {
+  background-image: url("../img/research.png");
+}
 .flair.showing {
   transform: translateY(0);
 }
@@ -182,7 +185,8 @@ noscript {
 #designer:after,
 #developer:after,
 #learner:after,
-#educator:after {
+#educator:after,
+#researcher:after {
   content: "er";
   font-weight: 100;
   max-width: 0;
@@ -202,6 +206,10 @@ noscript {
   color: #ff7bac;
 }
 
+#researcher:after {
+  color: #6b7478;
+}
+
 #educator:after {
   content: "or";
   transition-delay: 0.4s;
@@ -216,7 +224,8 @@ noscript {
 #designer:hover:after,
 #developer:hover:after,
 #learner:hover:after,
-#educator:hover:after {
+#educator:hover:after,
+#researcher:hover:after {
   max-width: 100%;
   border-right: 2px black solid;
 }
@@ -244,6 +253,11 @@ noscript {
 .facet-header #educator.facet-open span {
   max-width: 0;
 }
+.facet-header #researcher.facet-open:after {
+  max-width: 100%;
+  border-right: 2px #6b7478 solid;
+  animation: blink-caret-researcher 0.75s infinite;
+}
 
 #designer:hover:after {
   animation: blink-caret-designer 0.75s infinite;
@@ -259,6 +273,10 @@ noscript {
 
 #educator:hover:after {
   animation: blink-caret-educator 0.75s infinite;
+}
+
+#researcher:hover:after {
+  animation: blink-caret-researcher 0.75s infinite;
 }
 
 @keyframes blink-caret-designer {
@@ -293,6 +311,14 @@ noscript {
     border-color: #ff931e;
   }
 }
+@keyframes blink-caret-researcher {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #6b7478;
+  }
+}
 .facet-designer a {
   color: #7ac943;
 }
@@ -307,6 +333,10 @@ noscript {
 
 .facet-educator a {
   color: #ff931e;
+}
+
+.facet-researcher a {
+  color: #6b7478;
 }
 
 /*# sourceMappingURL=styles.css.map */

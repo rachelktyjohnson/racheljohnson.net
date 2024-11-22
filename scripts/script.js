@@ -89,6 +89,15 @@ document.querySelector("#educator").addEventListener('mouseout', (element) => {
     triggerHoverFlair(false, '.flair-educator')
 })
 
+document.querySelector("#researcher").addEventListener('mouseover', (element) => {
+    if (!anyFlairOpen()) {
+        triggerHoverFlair(true, '.flair-researcher')
+    }
+})
+document.querySelector("#researcher").addEventListener('mouseout', (element) => {
+    triggerHoverFlair(false, '.flair-researcher')
+})
+
 //END
 //HOVER EFFECTS
 
@@ -96,6 +105,7 @@ document.querySelector("#designer").addEventListener('click', toggleFacet);
 document.querySelector("#developer").addEventListener('click', toggleFacet);
 document.querySelector("#learner").addEventListener('click', toggleFacet);
 document.querySelector("#educator").addEventListener('click', toggleFacet);
+document.querySelector("#researcher").addEventListener('click', toggleFacet);
 
 function toggleFacet(e) {
     if (e.target.classList.contains('facet-open')) {
